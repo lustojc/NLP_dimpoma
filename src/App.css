@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #edf4f2;
+}
+.App {
+  width: 100vw;
+  max-width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 220px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.app-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.app-input {
+  /* background-color: #7c8363; */
+  width: 400px;
+  height: 50px;
+  border-radius: 20px;
+  padding: 10px;
+  border: 1px solid #7c8363;
+  color: #31473a;
+  font-size: 24px;
+}
+
+.app-input:focus {
+  outline: none;
+}
+
+.app-button {
+  width: 150px;
+  height: 50px;
+  border: 1px solid #7c8363;
+  margin-left: 20px;
+  border-radius: 10px;
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 300px;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 60px;
+}
+.result {
+  font-size: 24px;
+  font-style: oblique;
+  color: #31473a;
+}
+
+.table-wrapper {
+  margin: 40px 60px;
+}
+
+table {
+  display: grid;
+  border-collapse: collapse;
+  min-width: 100%;
+  /* These are just initial values which are overriden using JavaScript when a column is resized */
+  grid-template-columns:
+    minmax(150px, 1.67fr)
+    minmax(150px, 1.67fr);
+}
+
+thead,
+tbody,
+tr {
+  display: contents;
+}
+
+th,
+td {
+  padding: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background: #3B373B;
+  text-align: left;
+  font-weight: normal;
+  font-size: 1.1rem;
+  color: white;
+  position: relative;
+}
+
+th:last-child {
+  border: 0;
+}
+
+.resize-handle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  opacity: 0;
+  width: 3px;
+  cursor: col-resize;
+}
+
+.resize-handle:hover,
+/* The following selector is needed so the handle is visible during resize even if the mouse isn't over the handle anymore */
+.header--being-resized .resize-handle {
+  opacity: 0.5;
+}
+
+th:hover .resize-handle {
+  opacity: 0.3;
+}
+
+td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #3B373B;
+}
+
+tr:nth-child(even) td {
+  background: #DDDBDE;
+}
+
+tr:nth-child(odd) td {
+  background: #CAD4DF;
+}
