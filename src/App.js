@@ -4,6 +4,7 @@ import "./App.css";
 import { useEffect, useState, useId } from "react";
 
 import nlp from "compromise";
+import init from "./cyk";
 
 function App() {
   const [inputValue, setInputValue] = useState();
@@ -111,6 +112,7 @@ function App() {
           </div>
         </div>
       </div>
+      <button onClick={() => init()}> press me</button>
     </div>
   );
 }
